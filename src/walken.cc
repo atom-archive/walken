@@ -5,6 +5,7 @@
 #include <string>
 
 using ::v8::Arguments;
+using ::v8::Boolean;
 using ::v8::Context;
 using ::v8::Function;
 using ::v8::FunctionTemplate;
@@ -22,7 +23,7 @@ Handle<Value> Walk(const Arguments& args) {
   string path(*utf8Path);
 
   Local<Function> callback = Local<Function>::Cast(args[1]);
-  Local<Value> callbackArgs[1] = {};
+  Local<Value> callbackArgs[2] = {};
   Local<Object> context = Context::GetCurrent()->Global();
 
   int rootPathLength = path.length() + 1;
@@ -43,8 +44,9 @@ Handle<Value> Walk(const Arguments& args) {
       if (!isFile && !isDirectory)
         continue;
 
-      callbackArgs[0] = String::New(entry->fts_path);
-      Local<Value> recurse = callback->Call(context, 1, callbackArgs);
+      callbackArgs[0] = Local<Value>::New(String::New(entry->fts_path));
+      callbackArgs[1] = Local<Value>::New(Boolean::New(isDirectory));
+      Local<Value> recurse = callback->Call(context, 2, callbackArgs);
       if (isDirectory && recurse->IsBoolean() && !recurse->BooleanValue())
         fts_set(tree, entry, FTS_SKIP);
     }
