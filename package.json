@@ -1,6 +1,6 @@
 {
   "name": "walken",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Walk directories using fst_open",
   "keywords": [
     "walkdir",
@@ -12,17 +12,16 @@
   "bin": {
     "apm": "./bin/walken"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/walken.git"
+  },
   "licenses": [
     {
       "type": "MIT",
       "url": "http://github.com/atom/node-keytar/raw/master/LICENSE.md"
     }
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/atom/walken.git"
-  },
   "bugs": {
     "url": "https://github.com/atom/walken/issues"
   },
