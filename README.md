@@ -1,3 +1,3 @@
 # Walken
 
-Walk directories using `fst_open`.
+Walk directories using `fts_open`.
