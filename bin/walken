@@ -1,4 +1,7 @@
-#!/usr/bin/env coffee
+#!/usr/bin/env node
 
-pathToWalk = process.argv[2] ? '.'
-require('../src/walken').walk pathToWalk, (childPath) -> console.log childPath
+var walken = require('../lib/walken');
+var pathToWalk = process.argv[2] || '.';
+walken.walkSync(pathToWalk, function(childPath) {
+  console.log(childPath);
+});
