@@ -10,6 +10,7 @@ describe "walken", ->
       walkSync fixturesPath, (childPath) ->
         paths.push(childPath)
 
+      paths.sort()
       expect(paths.length).toBe 7
       expect(paths[0]).toBe path.join(fixturesPath, 'c.txt')
       expect(paths[1]).toBe path.join(fixturesPath, 'dir1')
@@ -27,6 +28,7 @@ describe "walken", ->
           paths.push(childPath)
           false
 
+        paths.sort()
         expect(paths.length).toBe 3
         expect(paths[0]).toBe path.join(fixturesPath, 'c.txt')
         expect(paths[1]).toBe path.join(fixturesPath, 'dir1')
