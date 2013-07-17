@@ -1,0 +1,47 @@
+{
+  "name": "walken",
+  "version": "0.0.0",
+  "description": "Walk directories using fst_open",
+  "keywords": [
+    "walkdir",
+    "fst",
+    "fst_open",
+    "walker"
+  ],
+  "main": "./lib/walken.js",
+  "bin": {
+    "apm": "./bin/walken"
+  },
+  "repository": "",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/atom/node-keytar/raw/master/LICENSE.md"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/walken.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atom/walken/issues"
+  },
+  "scripts": {
+    "prepublish": "grunt clean lint coffee",
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.6.6",
+    "grunt-cli": "~0.1.7",
+    "grunt-shell": "~0.2.2",
+    "coffee-script": "~1.6.2",
+    "jasmine-focused": "~0.12.0",
+    "rimraf": "~2.1.4",
+    "node-cpplint": "~0.1.4",
+    "grunt-coffeelint": "0.0.6"
+  },
+  "dependencies": {
+    "bindings": "~1.1.0"
+  }
+}

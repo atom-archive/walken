@@ -1,0 +1,4 @@
+#!/usr/bin/env coffee
+
+pathToWalk = process.argv[2] ? '.'
+require('../src/walken').walk pathToWalk, (childPath) -> console.log childPath
