@@ -45,7 +45,7 @@ Handle<Value> Walk(const Arguments& args) {
 
       callbackArgs[0] = String::New(entry->fts_path);
       Local<Value> recurse = callback->Call(context, 1, callbackArgs);
-      if (recurse->IsBoolean() && !recurse->BooleanValue())
+      if (isDirectory && recurse->IsBoolean() && !recurse->BooleanValue())
         fts_set(tree, entry, FTS_SKIP);
     }
     fts_close(tree);
