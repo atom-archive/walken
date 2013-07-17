@@ -1,7 +1,7 @@
 {
   "name": "walken",
   "version": "0.2.0",
-  "description": "Walk directories using fst_open",
+  "description": "Walk directories using fts_open",
   "keywords": [
     "walkdir",
     "fst",
