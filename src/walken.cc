@@ -1,6 +1,7 @@
 #include <fts.h>
 #include <node.h>
 #include <v8.h>
+#include <stdlib.h>
 #include <string>
 
 using ::v8::Arguments;
